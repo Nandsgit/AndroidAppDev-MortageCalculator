@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/mortgageCalculatorHeading"
+        android:layout_width="378dp"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17dp"
+        android:text="MORTAGE CALCULATOR"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        />
+
+    <EditText
+        android:id="@+id/amountBorrowed"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mortgageCalculatorHeading"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Amount borrowed (Eg, 1000.00) "
+        android:inputType="numberSigned|numberDecimal"
+
+        />
+
+    <TextView
+        android:id="@+id/textViewInterestRate"
+        android:layout_width="384dp"
+        android:layout_height="37dp"
+        android:layout_below="@+id/amountBorrowed"
+        android:layout_alignEnd="@+id/amountBorrowed"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="-89dp"
+        android:text="Indicate annual percentage rate of the interest from seekBar below:" />
+
+
+    <SeekBar
+        android:id="@+id/seekBarInterestRate"
+        android:layout_width="390dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/textViewInterestRate"
+        android:layout_marginTop="19dp"
+        android:indeterminate="false"
+        android:progress="100"
+        android:max="200"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="219dp"
+        android:layout_height="141dp"
+        android:layout_below="@+id/seekBarInterestRate"
+        android:layout_marginTop="13dp">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="211dp"
+            android:layout_height="31dp"
+            android:text="Select Loan Term in Years" />
+
+        <RadioButton
+            android:id="@+id/radioButton15yrs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="15" />
+
+        <RadioButton
+            android:id="@+id/radioButton20yrs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="20" />
+
+        <RadioButton
+            android:id="@+id/radioButton30yrs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="30" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkBoxTaxesInsurance"
+        android:layout_width="152dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/seekBarInterestRate"
+        android:layout_alignEnd="@+id/seekBarInterestRate"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="11dp"
+        android:text="Select whether taxes and insurance are to be included in the monthly payment" />
+
+    <Button
+        android:id="@+id/calculatebutton"
+        android:layout_width="193dp"
+        android:layout_height="65dp"
+        android:layout_alignEnd="@+id/checkBoxTaxesInsurance"
+        android:layout_alignBottom="@+id/checkBoxTaxesInsurance"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="-93dp"
+        android:onClick="onClick"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Calculate Monthly Pay" />
+
+    <TextView
+        android:id="@+id/totalAmountTxt"
+        android:layout_width="174dp"
+        android:layout_height="66dp"
+        android:layout_alignStart="@+id/calculatebutton"
+        android:layout_alignEnd="@+id/calculatebutton"
+        android:layout_alignBottom="@+id/calculatebutton"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginBottom="-96dp"
+        android:text="DisplayAmount" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="86dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/totalAmountTxt"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@+id/totalAmountTxt"
+        android:text="Total Monthly pay:" />
+
+
+
+</RelativeLayout>
